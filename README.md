@@ -1,2 +1,2 @@
-# CE.Emulator
-CE Emulator Website
+# CE Emulator
+## The Official Github Page For The CE Emulator VM
