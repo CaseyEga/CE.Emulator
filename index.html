@@ -6,20 +6,19 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="script" href="scripts.js">
 <style>
-/* Center the loader */
+
 
 </style>
 </head>
 <body onload="timeout(showpage, 5000)" style="margin:0;">
-
-
-<div id="loader"></div>
+        
+<div style="display:block;" loading><img src="img/ce.svg" id="celogo"></div>
+        
+<div id="loader">
+<img src="img/ce.svg" id="celogo" onload="timeout(bootanimation, 2000)">
 </div>
         
-<div id="loaded">
-<img src="img/ce.svg" id="celogo">
-        
-<div style="display:none;" id="bootanimation" class="animate-bottom" onload="timeout(osselect, 3000)">
+<div style="display:none;" id="bootanimation" class="animate-bottom" onload="timeout(dualboot, 5000)">
 <img src="img/ce.svg" id="celogo">
 </div>
 
@@ -29,9 +28,17 @@
 <script>
 var myVar;
 
-function osselect
-  document.getelementbyid("dualboot")
-  document.getelementsbyid("bootanimation, loaded, loader")
+function dualboot() {
+  document.getelementbyid("dualboot").style.display = "block";
+  document.getelementsbyid("bootanimation, loaded, loading").style.display = "none";
+
+}
+
+function bootanimation() {
+  document.getelementbyid("bootanimation").style.display = "block";
+  document.getelementsbyid("dualboot, loaded, loading").style.display = "none";
+
+}
         
 function timeout(name, time) {
  timeout = settimeout(name, time);
@@ -39,7 +46,7 @@ function timeout(name, time) {
 }
               
 function showPage() {
-  document.getElementsById("bootanimation, dualboot, loaded").style.display = "none";
+  document.getElementsById("bootanimation, dualboot, loading").style.display = "none";
   document.getElementById("loader").style.display = "block";
 }
 </script>
